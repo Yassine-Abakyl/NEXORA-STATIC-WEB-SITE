@@ -13,21 +13,18 @@ h1{
     font-family: 'Bebas Neue',sans-serif;
     font-weight: 400;
     letter-spacing: 1px;
-    font-size: 2rem;
+    font-size: clamp(3.5rem, 5vw, 4rem);
 }
 p{
     font-family:'nunito',sans-serif;
     font-weight: 400;
-    font-size: 0.85rem;
+    font-size: clamp(0.87rem, 3vw, 1.2rem);
 }
 a{
     font-family: 'Orbitron' ,sans-serif;
     font-weight: 500;
     text-decoration: none;
     color:inherit;
-}
-section{
-    padding:4rem 2%;
 }
 /* =====background video====== */
 .bg-video {
@@ -62,8 +59,8 @@ nav{
     align-items: center;
     padding:0.8rem 1rem;
     border-bottom: 1px solid;
+    backdrop-filter: blur(10px);
     border-image: linear-gradient(to right,transparent 0%,#0008ff 50%,transparent 100%) 1;
-    /* backdrop-filter: blur(10px); */
     z-index: 999;
     animation: fall 1s ease;  
 }
@@ -89,8 +86,10 @@ nav ul{
     gap: 1.5em;
     transform:translateX(100%);
     transition: transform 0.25s ease-in-out;
+    animation: fall 1s ease;  
 }
 nav li{
+    font-size: 1rem;
     list-style: none;
     position: relative;
     transition: all 0.15s ease-in-out;
@@ -102,7 +101,7 @@ nav li::after{
     left:0;
     width: 0;
     height: 2px;
-    background:linear-gradient(to right,transparent 20%, #0008ff 40%,transparent);
+    background:linear-gradient(to right,transparent 20%, #0008ff 50%,transparent);
     transition: width 0.15s ease;
 }
 nav li:hover::after{
@@ -112,6 +111,19 @@ nav li:hover::after{
 nav li:hover{
     color: rgb(236, 162, 13);
     transform:translateY(-2px);
+}
+.contact-btn{
+    display: none;
+    margin: 0;
+    padding: 0.5rem 1.8rem;
+    background:linear-gradient(to right,#009dfe 30% ,rgb(144, 0, 255))56%;
+    transition: transform 0.25s ease , color 0.25s ease , box-shadow 0.25s ease;
+}
+.contact-btn:hover{
+   transform: scale(1.05);
+   color: white;
+   box-shadow: 0 5px 15px rgb(0, 162, 255,0.5);
+
 }
 /* =======burger======= */
 .menu{
@@ -139,29 +151,37 @@ nav .burger-btn .close{
 }
 .menu:checked + .burger-btn .close{
     display: inline;
-
 }
 /* =======open menu========= */
 .menu:checked +.burger-btn +ul{
     opacity: 1;
     flex-direction: column;
     height: 100dvh;
-    width: 100%;
+    width: 50%;
     position: fixed;
+    padding:4rem 1rem;
     top: 0;
-    left: 0;
-    justify-content: center;
-    align-items: center;
-    gap: 2.5rem;
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
-    font-size: 2rem;
+    right: 0;
+    background:linear-gradient(45deg ,black  10%,rgb(75, 75, 213) );
+    font-size: 1rem;
+    backdrop-filter: blur(100px);
     transform: translateX(0%);
+}
+.menu:checked +.burger-btn +ul li{
+    padding: 0.5rem;
+    border-radius: 15px;
+}
+.menu:checked +.burger-btn +ul li:hover{
+    background-color: rgb(10, 17, 70);
+}
+.menu:checked +.burger-btn +ul li:hover:after{
+    width: 0;
 }
 /* ======.hero-section====== */
 .hero-section{
     height: 100dvh;
     display: flex;
+    padding: 4rem 2%;
 }
 .hero-content{
     padding:1.5rem 2%;
@@ -192,7 +212,6 @@ nav .burger-btn .close{
 }
 @keyframes online{0%{opacity: 0.5;} 50%{opacity:1;} 100%{opacity: 0.5;}}
 .article-hero .hero-title{
-    font-size: clamp(3.5rem, 5vw, 4rem);
     line-height: 1.1;
     word-spacing:5px;
     letter-spacing: 2px;
@@ -207,7 +226,6 @@ nav .burger-btn .close{
 }
 .article-hero .p-hero{
     text-align: center;
-    font-size: clamp(0.87rem, 3vw, 1.2rem);
     line-height: 1.6em;
     padding:1rem 0;
 
@@ -222,7 +240,7 @@ nav .burger-btn .close{
 .hero-buttons a{
     animation: popup 2s ease;
 }
- main .btn{
+ main .btn , nav>a{
     display: block;
     width: fit-content;
     font-size: 1rem;
@@ -317,7 +335,15 @@ nav .burger-btn .close{
         transform: translate(-30%, -40%) rotate(10deg);
     }
 }
-
+.about-section{
+    background-color: #101010;
+    display: flex;
+    text-align: center;
+    padding: 6rem;
+    flex-direction: column;
+    height: 100dvh;
+    padding: 6rem 2%;
+}
 
 /* =======Responsive mobile======= */
 @media screen and (min-width:768px){
@@ -325,14 +351,18 @@ nav .burger-btn .close{
         font-size: 18px;
     }
     nav{
-        padding:0.8rem 1.6rem;
+        padding:0.8rem 2.4rem;
     }
     nav ul{
         display: flex;
         position: static;
+        padding:0.8rem 1.6rem;
+        border-radius: 50px;
+        border: 1px solid rgb(86, 93, 112);
         transform: translateX(0);
         opacity: 1;
     }
+    .contact-btn{display: block;}
     .menu{display: none;}
     .burger-btn{
         display: none;
