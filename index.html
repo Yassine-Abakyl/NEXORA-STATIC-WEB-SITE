@@ -5,17 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link
-    href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Nunito:wght@400;700&family=Oswald:wght@400;700&family=Orbitron:wght@400;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;700&family=Oswald:wght@400;700&family=Orbitron:wght@400;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="style/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!--icons of menu -->
   <title>NEXORA</title>
 </head>
 
 <body>
-  <div class="bg-video">
-    <video src="heroBackground.mp4" muted autoplay loop></video>
-  </div>
+
   <nav>
     <h1 class="logo">NEXORA</h1>
     <input type="checkbox" id="menu" class="menu" />
@@ -34,7 +33,10 @@
   <main>
     <!-- Hero section -->
     <section class="hero-section" id="home">
-      <section class="hero-content">
+      <div class="bg-video">
+        <video src="heroBackground.mp4" muted autoplay loop></video>
+      </div>
+      <div class="hero-content">
         <article class="article-hero">
           <div class="online">
             <span class="online-circ"></span>
@@ -54,7 +56,7 @@
           <a href="#services" class="btn">Our Services </a>
           <a href="contact.html" class="btn">Contact Us</a>
         </div>
-      </section>
+      </div>
       <article class="hero-pictures">
         <div class="picture-right"></div>
         <div class="picture-top-left"></div>
@@ -64,65 +66,118 @@
     <!-- about section -->
     <section class="about-section" id="about">
       <article class="article-about">
-        <h1 class="about-title">Why Choose Nexora?</h1>
+        <h1 class="about-title">Why Choose <span class="effective">Nexora</span>?</h1>
         <p class="p-about">
-          Nexora is focused on clarity, simplicity, and efficiency.
-          We believe that a good digital presence doesn't need to be complex.
-          Our goal is to deliver clean designs, structured content, and realistic solutions adapted to real needs — all optimized to ensure strong SEO performance and online visibility .
+          Nexora delivers clear, simple, and efficient digital solutions. We focus on
+          clean design, structured content, and practical strategies that enhance SEO and maximize online
+          visibility—without unnecessary complexity
         </p>
-        <ul class="list-about">
-          <li>Clear and structured digital solutions</li>
-          <li>Modern and clean visual design</li>
-          <li>Realistic pricing without unnecessary features</li>
-          <li>Focus on user experience and readability</li>
-        </ul>
       </article>
+      <section class="why-us">
+        <section class="list-about">
+          <div class="item item1">
+            <span class="numbers">01</span>
+            <p>Clear and structured digital solutions</p>
+          </div>
+          <div class=" obj item item2">
+            <span class="numbers">02</span>
+            <p>Modern and clean visual design </p>
+          </div>
+          <div class=" obj item item3">
+            <span class="numbers">03</span>
+            <p>Realistic pricing without unnecessary features</p>
+          </div>
+          <div class="obj item item4">
+            <span class="numbers">04</span>
+            <p>Focus on user experience and readability</p>
+          </div>
+        </section>
+        <div class="images-about">
+
+        </div>
+      </section>
     </section>
     <!-- services section -->
-    <!-- <section class="sevices-section" id="services">
-      <h1 class="services-grand-title">Services</h1>
+    <section class="services-section" id="services">
+      <!-- <h1 class="services-grand-title ">Services</h1> -->
       <article class="arcticle-services">
-        <h2 class="services-title">
+        <h1 class="services-title">
           Our Services
-        </h2>
+        </h1>
         <p class="p-services">
-          We provide professional digital services designed to help you 
-          present your project or business in a clear and effective way.
+          We provide <span class="effective">professional</span> digital services <span
+            class="effective">designed</span> to help you
+          present your <span class="effective">project</span> or business in a clear and effective way.
         </p>
       </article>
       <div class="container-cards">
         <div class="service-card-one card">
-          <h3 class="title-service-card-one">
-            Online Presence Starter
-          </h3>
-          <p class="p-srvice-card-one">
-            A simple and effective solution for individuals and small projects 
-            who want to appear online professionally.
-          </p>
-          <a href="ServiceOne.html" class="btn-card-one btn-c">Learn More</a>
+          <article class="article-card">
+            <div class="numbers" style="text-align:end;">01</div>
+            <h3 class="title-service-card-one">
+              Online Presence Starter
+            </h3>
+            <p class="p-service-card-one">
+              A simple and effective solution for individuals and small projects
+              who want to appear online professionally.
+            </p>
+            <a href="ServiceOne.html" class="btn-card-one btn-c">Learn More</a>
+          </article>
         </div>
         <div class="service-card-tow card">
-          <h3 class="title-service-card-tow">
-            Business Website Solution
-          </h3>
-          <p class="p-srvice-card-tow">
-            Professional websites designed for small and medium businesses
-            to build trust and credibility online.
-          </p>
-          <a href="ServiceTwo.html" class="btn-card-tow btn-c">Learn More</a>
+          <article class="article-card">
+            <div class="numbers" style="text-align:end;">02</div>
+            <h3 class="title-service-card-tow">
+              Business Website Solution
+            </h3>
+            <p class="p-service-card-tow">
+              Professional websites designed for small and medium businesses
+              to build trust and credibility online.
+            </p>
+            <a href="ServiceTwo.html" class="btn-card-tow btn-c">Learn More</a>
+          </article>
         </div>
         <div class="service-card-three card">
-          <h3 class="title-service-card-three">
-            Visual & Structure Optimization 
-          </h3>
-          <p class="p-srvice-card-three">
-            Improve the design and organization
-             of your existing website to enhance clarity and user experience.
-          </p>
-          <a href="ServiceThree.html" class="btn-card-three btn-c">Learn More</a>
+          <article class="article-card">
+            <div class="numbers" style="text-align:end;">03</div>
+            <h3 class="title-service-card-three">
+              Visual & Structure Optimization
+            </h3>
+            <p class="p-service-card-three">
+              Improve the design and organization
+              of your existing website to enhance clarity and user experience.
+            </p>
+            <a href="ServiceThree.html" class="btn-card-three btn-c">Learn More</a>
+          </article>
+        </div>
+        <div class="service-card-one card">
+          <article class="article-card">
+            <div class="numbers" style="text-align:end;">04</div>
+            <h3 class="title-service-card-one">
+              Online Presence Starter
+            </h3>
+            <p class="p-service-card-one">
+              A simple and effective solution for individuals and small projects
+              who want to appear online professionally.
+            </p>
+            <a href="ServiceOne.html" class="btn-card-one btn-c">Learn More</a>
+          </article>
+        </div>
+        <div class="service-card-one card">
+          <article class="article-card">
+            <div class="numbers" style="text-align:end;">05</div>
+            <h3 class="title-service-card-one">
+              Online Presence Starter
+            </h3>
+            <p class="p-service-card-one">
+              A simple and effective solution for individuals and small projects
+              who want to appear online professionally.
+            </p>
+            <a href="ServiceOne.html" class="btn-card-one btn-c">Learn More</a>
+          </article>
         </div>
       </div>
-    </section> -->
+    </section>
     <!-- CTA section -->
     <!-- <section class="CTA-section">
       <h1 class="CTA-grand-title">Call To Action Section</h1>
