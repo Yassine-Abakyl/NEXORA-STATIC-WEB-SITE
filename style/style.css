@@ -50,7 +50,6 @@ nav {
     z-index: 999;
     animation: fall 1s ease;
 }
-
 /*====== nexora logo =======*/
 nav .logo {
     font-family: 'Bebas Neue', sans-serif;
@@ -59,6 +58,7 @@ nav .logo {
     background: linear-gradient(to top, #009dfe 30%, rgb(144, 0, 255))56%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    cursor: default;
 }
 
 /* =====nav animation===== */
@@ -167,7 +167,7 @@ nav .burger-btn .close {
     padding: 4rem 1rem;
     top: 0;
     right: 0;
-    background: linear-gradient(45deg, black 10%, rgb(75, 75, 213));
+    background: linear-gradient(to bottom, rgb(6, 97, 154) 30%, rgb(80, 8, 135));
     font-size: 1rem;
     backdrop-filter: blur(100px);
     transform: translateX(0%);
@@ -224,10 +224,11 @@ nav .burger-btn .close {
 .hero-content {
     padding: 1.5rem 2%;
     animation: popup 2s ease;
+    cursor: default;
 }
 
 /* =====article hero====== */
-.article-hero .online {
+.online {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -239,6 +240,7 @@ nav .burger-btn .close {
     padding: 0.5rem 1rem;
     margin: 0.8em 0.4em;
     width: fit-content;
+    cursor: default;
 
 }
 
@@ -411,12 +413,85 @@ nav>a {
         transform: translate(-30%, -40%) rotate(10deg);
     }
 }
+hr{
+    border: 1.5px solid; 
+   border-image: linear-gradient(to right, transparent 0%, #0008ff 50%, transparent 100%) 1;
+}
+/* ===========trusted by section================= */
+/* =================trusted by title======================= */
+.trusted-section h1{
+    position:relative;
+    text-align:center;
+    margin-bottom:3rem;
+}
+/* ===================underline titles================================= */
+.trusted-section h1::after ,.services-title::after{
+    position: absolute;
+    content:"";
+    bottom:10px;
+    left:50%;
+    transform: translate(-50%);
+    width:100px;
+    height: 3px;
+    border-radius: 5px;
+    background: linear-gradient(to right, #009dfe 30%, rgb(144, 0, 255));
+}
+/* =========================spin animation================================== */
+.trusted-infinit{
+    mask-image: linear-gradient(to right, rgb(0,0,0,0),rgb(0,0,0,1)20%,rgb(0,0,0,1)80%, rgb(0,0,0,0));
+    display: flex;
+    overflow: hidden;
+    padding:4rem;
+    height: 200px;
+}
+.logo-trusted{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    animation: spin 30s linear infinite;
+}
+.trusted-infinit:has(.logo-trusted svg:hover) .logo-trusted {
+    animation-play-state: paused;
+}
+svg:hover{scale: 1.05;cursor: pointer;}
+/* =======animation left scroll======= */
+@keyframes spin {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); }
+}
+.statistic{
+    padding:4rem 0;
+    display: flex;
+    gap:3rem;
+    overflow: scroll;
+    mask-image: linear-gradient(to right, rgba(0,0,0,0),rgba(0,0,0,1)10%,rgba(0,0,0,1)90%, rgb(0,0,0,0));
+    scrollbar-width: none;
+    background: linear-gradient(to bottom,transparent, rgba(96, 10, 202, 0.477),rgba(0, 140, 255, 0.436),transparent);
+}
+.statistic::-webkit-scrollbar{
+    display: none;
+}
+.statistic .info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border:1px solid #868a8e;
+    border-radius: 1rem;
+    padding:2rem;
+    height: 250px;
+    width: 150px;
+    background-color: rgba(43, 42, 42, 0.461);
+    backdrop-filter:blur(20px);
+    transition: transform 0.5s ease;
+}
 
 /* ===about section===== */
 .about-section {
     position: relative;
     padding: 6rem 2%;
-    background: url('../pictures/About3D.jpg');
+    background: linear-gradient(to bottom,transparent, #111, #000 , transparent);
 }
 
 /* =========article============= */
@@ -487,7 +562,7 @@ nav>a {
 }
 
 .list-about:has(.item3:hover)~.images-about {
-    background: url('/pictures/about03.webp') center/150% no-repeat;
+    background: url('/pictures/about03.webp') center/200% no-repeat;
 }
 
 .list-about:has(.item4:hover)~.images-about {
@@ -516,61 +591,186 @@ nav>a {
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.65) inset, -10px -10px 20px rgba(0, 0, 0, 0.65) inset;
     background: url('/pictures/about01.jpeg') center/cover no-repeat;
 }
+/* ================.services-section====================== */
 .services-section{
-    background: linear-gradient(180deg, #111, #000);
+    background: linear-gradient(to bottom,transparent, #111, #000 , transparent);
     padding: 6rem 2%;
 }
-.arcticle-services{
-    text-align: center;
-}
+.article-services{text-align: center;}
+.services-title{position: relative;}
+/* ================cards of services================= */
 .container-cards{
     display: flex;
-    flex-wrap: wrap;
-    padding: 1rem;
     flex-direction: column;
-    align-items:stretch;
+    flex-wrap: wrap;
+    padding: 3rem 1rem;
     gap:1rem;
 }
 .services-section .card{
-    border-radius: 1rem;
+    border-radius: 1.8rem;
     min-height: 50vh;
-    background: linear-gradient(180deg, #111, #000);
+    background-color:#111;
     border:1px solid rgb(95, 95, 97);
     box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-    flex:1 1 300px;
+    flex:1 1 20%;
     padding: 1rem;
+    transition: transform 0.5s ease , background-color  0.5s ease , box-shadow  0.5s ease, flex-grow 0.5s ease;
     
 }
-.article-card .numbers{
+.container-cards .numbers{
     font-family:Oswald,sans-serif;
     font-weight: 100;
+    text-align: end;
     font-size: x-large;
     padding:0.5rem 0;
 }
-.article-card{ overflow: hidden;}
-.card:nth-child(1){
-    margin-left: 0;
-    z-index: 5;
+.growing{
+    width:100%;
 }
-.card:nth-child(2){
-    z-index: 4;
+.article-card{
+    width: 240px; 
+    padding:0 2rem 0 0.5rem;
 }
-.card:nth-child(3){
-    z-index: 3;
+.card:nth-child(1){margin-left: 0;z-index: 5;}.card:nth-child(2){ z-index: 4;}.card:nth-child(3){z-index: 3;}.card:nth-child(4){z-index: 2;}.card:nth-child(5){z-index: 1;}
+h3[class*=title-service-card]{font-size:xx-large;}
+p[class*=p-service-card]{padding: 1rem 0;font-size: clamp(0.87rem, 1vw, 1rem);}
+.services-section .card .btn{
+    margin-top: 3rem;
+    background-color:transparent;
+    color:#efedea;
+    border:2px solid #efedea;
 }
-.card:nth-child(4){
-    z-index: 2;
+.consultation-section{
+    padding-bottom: 6rem;
+    font-size: 10px;
 }
-.card:nth-child(5){
-    z-index: 1;
+.consultation{
+    background-color: #000;
+    border-radius:1rem;
+    display: flex;
+    width: 90%;
+    min-height:50vh;
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+    padding:3rem; 
+    box-shadow: 0 15px 25px rgba(21, 20, 20, 0.9);
+}
+.consultation-title ,.p-consultation,.consultation .btn{text-align: center;}
+.consultation-title{
+  font-size: clamp(1.5rem, 3vw, 4rem);
+  font-weight: bold;
+}
+.consultation .btn{
+    font-size:clamp(0.8rem, 1.5vw, 2rem);
+    padding:0.8rem 2rem;}
+.CTA-section{
+    padding: 4rem 2%;
+    background: linear-gradient(to bottom,transparent, #111, #000 , transparent);
+}
+.content-CTA{
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+}
+.CTA-title,.p-CTA{text-align: center;}
+form{display: flex;flex-direction:column;justify-content:stretch}
+form label{
+    color: #efedea;
+    padding:0.5rem 0rem 0 0.2rem;
+}
+form input , textarea{
+    margin: 0.2rem 0;
+    padding: 1.5rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgb(55, 54, 54);
+    background-color: #000;
+    color:#efedea;
+    resize: none;
+}
+.label{position: relative;margin-bottom: 5px;}
+.label::after{
+    display: block;
+    position: absolute;
+    bottom:-20px;
+    font-family:'Bebas Neue', sans-serif;
+}
+form input::placeholder , textarea::placeholder{
+    font-family: 'Bebas Neue', sans-serif;
+    color: #868a8e92;
+    font-size:20px;
+    letter-spacing:1px;
+}
+form input:focus ,form textarea:focus{outline:1px solid white;box-shadow: 0 5px 23px rgba(218, 218, 219, 0.4);}
+form input[type=text]:focus:invalid~.lab-1::after,form input[type=email]:focus:invalid~.lab-2::after,form input[type=tele]:focus:invalid~.lab-3::after,form textarea:focus:invalid~.lab-4::after{
+    content: "invalid !";
+    color:rgb(251, 0, 0)
+
+}
+form input[type=text]:focus:valid~.lab-1::after,form input[type=email]:focus:valid~.lab-2::after,form input[type=tele]:focus:valid~.lab-3::after,form textarea:focus:valid~.lab-4::after{
+    position: absolute;
+    bottom:-20px;
+    content: "valid !";
+    color:rgb(31, 196, 86)
+
+}
+form .contact-btn{
+    display: block;
+    border:none;
+    border-radius:10px;
+    width: 200px;
+    margin-top: 15px;
+    font-family:'Bebas Neue', sans-serif;
+    letter-spacing: 2px;
+}
+.technologie-section{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 4rem 2%;
+}
+.article-tech{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:2rem;
+}
+.tech-title , .tech-p{
+    text-align: center;
+    width: 100%;
+}
+.technologies{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem;
+    gap:1rem;
+}
+.technologies div[class^=tech]{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #111;
+    width:100px;
+    height:100px;
+    border-radius: 10px;
+    transition: background-color 0.5s ease;
+}
+.technologies div[class^=tech]:hover{
+    background-color: #1b1a1a;
+}
+.technologies div[class^=tech]:hover .img-light{
+    transform: scale(1.15);
+}
+.img-light{
+    width: 120px;
+    height: 120px;
+    transition: transform 0.5s ease;
 }
 
-h3[class*=title-service-card]{
-    font-size:xx-large;
-}
-p[class*=p-service-card]{
-    padding:10px 0;
-}
+
 /* =======Responsive mobile======= */
 @media screen and (min-width:768px) {
     body {
@@ -639,7 +839,17 @@ p[class*=p-service-card]{
     .services-section .container-cards{
         flex-direction: row;
     }
+    .consultation{width: 60%;}
+    .content-CTA{flex-direction:row;}
+    .CTA-title,.p-CTA{width:100%;}
+    form{width:100%;}
+    .tech-title , .tech-p{width: 70%;}
+    .technologies div[class^=tech]{width: 200px;height: 200px;}
+    .statistic{ justify-content:space-evenly;align-items: center;}
+    .info-2, .info-4{transform: scale(1.15);}
+.info-3{transform: scale(1.3);}
 }
+
 
 /* =======Responsive Tablet======= */
 @media screen and (min-width:1024px) {
@@ -652,9 +862,35 @@ p[class*=p-service-card]{
     .article-hero .p-hero {
         width: 60%;
     }
-    .container-cards{gap:0;flex-wrap: nowrap;}
-    .services-section .card{
-        margin-left: -30px;
-        min-height: 90vh;
+    .container-cards{
+        gap:0;
+        flex-wrap: nowrap;
     }
+    .services-section .card{
+        margin-left: -50px;
+        min-height: 80vh;
+        min-width: 200px;
+    }
+    .container-cards .card:hover , .container-cards:has(.card:not(:hover)) .service-card-one {
+        background-color:#efedea;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+        color:black;
+        transform: translateX(2rem);
+        flex-grow:4;
+    }
+    .container-cards:has(.service-card-tow:hover) .service-card-one,.container-cards:has(.service-card-three:hover) .service-card-one , .container-cards:has(.service-card-four:hover) .service-card-one , .container-cards:has(.service-card-five:hover) .service-card-one{
+       color:#efedea; 
+       background-color:black;
+       transform: translateX(0);
+    }
+    .article-card{
+        width: 220px;
+    }
+    .services-section .card .btn{
+        margin-top: 3rem;
+        background-color:transparent;
+        color:#111;
+        border:2px solid #111;
+    }
+        .CTA-title,.p-CTA{text-align:start; width: 60%;}
 }
