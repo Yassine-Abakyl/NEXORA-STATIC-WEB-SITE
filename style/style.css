@@ -110,7 +110,7 @@ nav li:hover {
     transform: translateY(-2px);
 }
 
-.contact-btn {
+.contact-btn{
     display: none;
     margin: 0;
     border: none;
@@ -307,7 +307,9 @@ nav .burger-btn .close {
 
 main .btn,
 nav>a {
-    display: block;
+    display:flex;
+    align-items: center;
+    gap:0.5rem;
     width: fit-content;
     font-size: 1.2rem;
     font-family: "Oswald", monospace;
@@ -316,7 +318,32 @@ nav>a {
     margin: 0 auto;
     color: rgb(0, 0, 0);
     background-color: rgb(255, 255, 255);
+    transition: all 0.3s ease;
 }
+/* ==========button princiipale=========== */
+.btn-hero{position: relative; overflow: hidden;}
+.btn-hero>* , .btn{z-index: 1;transition: all 0.3s ease;}
+.hero-buttons a:nth-last-child(1):hover{
+    outline: 2px solid white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.532);
+
+}
+.btn-hero::before{
+    content:"";
+    position: absolute;
+    inset:0;
+    opacity: 0;
+    background: linear-gradient(to right, #009dfe 30%, rgb(144, 0, 255))56%;
+    transition: opacity 0.3s ease; 
+}
+.btn-hero:hover{
+    color:white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.532);
+}
+.btn-hero:hover svg{
+    transform: translateX(5px);
+}
+.btn-hero:hover:before{opacity: 1;}
 
 .hero-buttons a:last-child {
     border: 1px solid rgba(255, 255, 255, 0.466);
@@ -647,6 +674,7 @@ p[class*=p-service-card]{padding: 1rem 0;font-size: clamp(0.87rem, 1vw, 1rem);}
     color:#efedea;
     border:2px solid #efedea;
 }
+
 /* ==============consultation section================= */
 .consultation-section{
     padding-bottom: 6rem;
@@ -676,12 +704,8 @@ p[class*=p-service-card]{padding: 1rem 0;font-size: clamp(0.87rem, 1vw, 1rem);}
     padding:0.8rem 2rem;}
 /* ===================works==================== */
 .work-section{
-    position: relative;
     font-size: 48px;
     padding: 4rem 2%;
-    display: flex;
-    flex-wrap: wrap;
-    gap:2rem;
 }
 /* ====================work article============ */
 .work-section .work-article{
@@ -699,13 +723,12 @@ p[class*=p-service-card]{padding: 1rem 0;font-size: clamp(0.87rem, 1vw, 1rem);}
     padding:0;
 }
 /* =============projects================= */
-.collaps{
+.works{
+    position: relative;
     display: flex;
     flex-direction: column;
-    gap:1rem;
-    height: 100vh;
-    flex: 1 1 30vw;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    gap:2rem;
 }
 .work-section .work{
     position: sticky;
@@ -717,31 +740,74 @@ p[class*=p-service-card]{padding: 1rem 0;font-size: clamp(0.87rem, 1vw, 1rem);}
     box-shadow: 0 20px 30px rgba(0, 0, 0, 0.532);
     height: 80vh;
     flex: 1 1 45vw;
+    overflow: hidden;
+}
+.work-section .work .online{
+    margin:0;
+    backdrop-filter: blur(5px);
+    font-variant: small-caps;
+}
+.collaps{
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    gap:1rem;
+    height: 100vh;
+    flex: 1 1 30vw;
+    top:130px;
+    /* flex-wrap: nowrap; */
 }
 .work-section .work .cover-link{
     position: absolute;
     inset:0;
 }
 .work-section .work1{
-    height: 100vh;
+    top:0px;
+    min-height: 100vh;
     flex: 1 1 100vw;
 }
 .work-section .work2 ,.work-section .work7{
-    height: 100vh;
+    min-height: 100vh;
     flex: 1 1 40vw;
+    top:20px;
+
 }
-.work-section .work3 , .work-section .work4{
-    height:50vh;
-    flex: 1 1 40vw;
+/* .work-section .work1{ background:linear-gradient(rgba(0, 0, 0, 0.493)),url("../pictures/About2.webp") center no-repeat;background-size:300%;transition: background-size 0.5s ease;}
+.work-section .work2{top:40px; background:linear-gradient(rgba(0, 0, 0, 0.493)),url("../pictures/About2.webp") center no-repeat;background-size:300%;transition: background-size 0.5s ease;}
+.work-section .work3{top:50px; background:linear-gradient(rgba(0, 0, 0, 0.493)),url("../pictures/About2.webp") center no-repeat;background-size:150%;transition: background-size 0.5s ease;}
+.work-section .work4{top:60px; background:linear-gradient(rgba(0, 0, 0, 0.493)),url("../pictures/About2.webp") center no-repeat;background-size:150%;transition: background-size 0.5s ease;}
+.work-section .work5{top:70px; background:linear-gradient(rgba(0, 0, 0, 0.493)),url("../pictures/About2.webp") center no-repeat;background-size:150%;transition: background-size 0.5s ease;}
+.work-section .work6{top:80px; background:linear-gradient(rgba(0, 0, 0, 0.493)),url("../pictures/About2.webp") center no-repeat;background-size:150%;transition: background-size 0.5s ease;}
+.work-section .work7{top:90px; background:linear-gradient(rgba(0, 0, 0, 0.493)),url("../pictures/About2.webp") center no-repeat;background-size:300%;transition: background-size 0.5s ease;}
+.work-section .work1:hover{background-size:290%;}
+.work-section .work2:hover{background-size:290%;}
+.work-section .work3:hover{background-size:140%;}
+.work-section .work4:hover{background-size:140%;}
+.work-section .work5:hover{background-size:140%;}
+.work-section .work6:hover{background-size:140%;}
+.work-section .work7:hover{background-size:290%;} */
+
+.work-section .work>*{
+    z-index:1
 }
-.work-section .work1{background:url("");}
-.work-section .work2{background:url("");}
-.work-section .work3{background:url("");}
-.work-section .work4{background:url("");}
-.work-section .work5{background:url("");}
-.work-section .work6{background:url("");}
-.work-section .work7{background:url("");}
-    /* ============CTA section============== */
+.work-section .work::before{
+    content:"";
+    position: absolute;
+    background:linear-gradient( rgba(0, 0, 0, 0.258)),url("../pictures/About2.webp") center/cover no-repeat;
+    inset:0;
+    transition:transform 0.5s ease;
+}
+.work-section .work1::before{background:linear-gradient( rgba(0, 0, 0, 0.258)),url("../pictures/About2.webp") center/cover no-repeat;}
+.work-section .work2::before{background:linear-gradient( rgba(0, 0, 0, 0.258)),url("../pictures/About2.webp") center/cover no-repeat;}
+.work-section .work3::before{background:linear-gradient( rgba(0, 0, 0, 0.258)),url("../pictures/ZenBook.png") center/cover no-repeat;}
+.work-section .work4::before{background:linear-gradient( rgba(0, 0, 0, 0.258)),url("../pictures/About2.webp") center/cover no-repeat;}
+.work-section .work5::before{background:linear-gradient( rgba(0, 0, 0, 0.258)),url("../pictures/About2.webp") center/cover no-repeat;}
+.work-section .work6::before{background:linear-gradient( rgba(0, 0, 0, 0.258)),url("../pictures/About2.webp") center/cover no-repeat;}
+.work-section .work7::before{background:linear-gradient( rgba(0, 0, 0, 0.258)),url("../pictures/About2.webp") center/cover no-repeat;}
+.work-section .work:hover::before{
+    transform: scale(1.08);
+}
+/* ============CTA section============== */
 .CTA-section{
     padding: 4rem 2%;
     background: linear-gradient(to bottom,transparent, #111, #000 , transparent);
@@ -884,7 +950,22 @@ form .contact-btn{
     gap:4rem;
 }
 .main .back{
+    display: flex;
+    width: fit-content;
+    font-family: 'nunito', sans-serif;
+    align-items: center;
     margin-bottom: 4rem;
+    transition: all 0.3s ease;
+}
+.main .back .rotate-svg{
+    transform:rotate(180deg);
+    transition: all 0.3s ease;
+}
+.main .back:hover{
+    color:rgb(192, 127, 5);
+}
+.main .back:hover .rotate-svg{
+    transform: rotate(180deg) translate(5px);
 }
 .main .container{
     display: flex;
@@ -1186,7 +1267,6 @@ footer .links a:hover{
     border-radius:50px;
     flex:1 1 30%;
 }
-
 @media screen and (min-width:558px) and (max-width:866px){
     .section-service-detail .legendary{
         flex-grow: 0;
@@ -1230,37 +1310,31 @@ footer .links a:hover{
     .burger-btn {
         display: none;
     }
-
     .article-hero .hero-title,
     .effective,
     .article-hero .p-hero {
         width: 100%;
         text-align: left;
     }
-
     .hero-buttons {
         flex-direction: row;
     }
-
     main .btn {
         margin: 0;
     }
-
     .hero-pictures {
         display: block;
     }
-
+    .statistic{ justify-content:space-evenly;align-items: center;}
     .article-about {
         flex-direction: row;
         gap: 3rem;
     }
-
     .list-about .item1 {
         border-left-color: #009dfe;
         box-shadow: 0 10px 30px rgba(13, 17, 236, 0.386) inset, 0 -10px 30px rgba(13, 17, 236, 0.632) inset;
         background-color: rgba(255, 255, 255, 0.03);
     }
-
     .images-about {
         display:flex;
         justify-content: center;
@@ -1280,6 +1354,8 @@ footer .links a:hover{
         margin-left:60%;
         padding:0 0 3rem;
     }
+    .work-section .work , .collaps{position:relative;top:0;}
+    .work-section .works{flex-direction: row;}
     .content-CTA{flex-direction:row;}
     .CTA-title,.p-CTA{width:100%;}
     .CTA-section .container{
@@ -1288,7 +1364,6 @@ footer .links a:hover{
     form{width:100%;}
     .tech-title , .tech-p{width: 70%;}
     .technologies div[class^=tech]{width: 200px;height: 200px;}
-    .statistic{ justify-content:space-evenly;align-items: center;}
     .pic-srv{display: flex;}
     .stay .formule{flex-wrap: nowrap;}
 }
