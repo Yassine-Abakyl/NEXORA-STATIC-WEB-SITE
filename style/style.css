@@ -9,10 +9,35 @@ html {
 }
 
 body {
+    position: relative;
     background-color: rgb(21, 17, 95);
     color: white;
     font-size: 16px;
     line-height: 1.5;
+}
+.intro{
+    position: absolute;
+    background-color: #1b1e6b;
+    top: 0;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    animation: intro 1.5s ease forwards;
+}
+.intro img{
+    position: absolute;
+    top:200px;
+    height: 200px;
+}
+@keyframes intro{
+    0%{opacity: 1;}
+    20%{opacity: 1;}
+    40%{opacity: 1;}
+    60%{opacity: 1;}
+    80%{opacity: 1;}
+    100%{opacity: 0;z-index: -9999;}
 }
 h1,h2,h3,h4,.section-service-detail span{
     font-family: 'Bebas Neue', sans-serif;
@@ -54,9 +79,7 @@ nav {
 .logo {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 2rem;
-    background: linear-gradient(to top, #009dfe 30%, rgb(144, 0, 255))56%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color:#009dfe;
     cursor: default;
 }
 
@@ -280,9 +303,7 @@ nav .burger-btn .close {
 
 .effective {
     text-align: center;
-    background: linear-gradient(to top, #009dfe 30%, rgb(144, 0, 255));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color:#009dfe;
 
 }
 
@@ -797,7 +818,7 @@ p[class*=p-service-card]{padding: 1rem 0;font-size: clamp(0.87rem, 1vw, 1rem);}
     inset:0;
     transition:transform 0.5s ease;
 }
-.work-section .work1::before{background:linear-gradient( rgba(0, 0, 0, 0.258)),url("../pictures/About2.webp") center/cover no-repeat;}
+.work-section .work1::before{background:linear-gradient( rgba(0, 0, 0, 0.258)),url("../pictures/TV-OAT.png") center/cover no-repeat;}
 .work-section .work2::before{background:linear-gradient( rgba(0, 0, 0, 0.258)),url("../pictures/About2.webp") center/cover no-repeat;}
 .work-section .work3::before{background:linear-gradient( rgba(0, 0, 0, 0.258)),url("../pictures/ZenBook.png") center/cover no-repeat;}
 .work-section .work4::before{background:linear-gradient( rgba(0, 0, 0, 0.258)),url("../pictures/About2.webp") center/cover no-repeat;}
@@ -1195,7 +1216,7 @@ footer .social-media >*{
 }
 footer .social-media *{transition: all 0.3s ease;}
 footer .social-media>:hover *{
-    stroke: #0008ff;
+    stroke:#009dfe;;
 }
 /* ==================links=================== */
 .links{flex: 1 1 60%;}
