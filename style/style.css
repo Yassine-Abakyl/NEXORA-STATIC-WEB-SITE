@@ -822,7 +822,7 @@ p[class*=p-service-card]{padding: 1rem 0;font-size: clamp(0.87rem, 1vw, 1rem);}
 .work-section .work1::before{background:linear-gradient( rgba(0, 0, 0, 0.258)),url("../pictures/TV-OAT.png") center/cover no-repeat;}
 .work-section .work2::before{background:linear-gradient( rgba(0, 0, 0, 0.258)),url("../pictures/About2.webp") center/cover no-repeat;}
 .work-section .work3::before{background:linear-gradient( rgba(0, 0, 0, 0.258)),url("../pictures/ZenBook.png") center/cover no-repeat;}
-.work-section .work4::before{background:linear-gradient( rgba(0, 0, 0, 0.258)),url("../pictures/afcon.png") center/cover no-repeat;}
+.work-section .work4::before{background:linear-gradient( rgba(0, 0, 0, 0.258)),url("../pictures/Afcon.png") center/cover no-repeat;}
 .work-section .work5::before{background:linear-gradient( rgba(0, 0, 0, 0.258)),url("../pictures/About2.webp") center/cover no-repeat;}
 .work-section .work6::before{background:linear-gradient( rgba(0, 0, 0, 0.258)),url("../pictures/About2.webp") center/cover no-repeat;}
 .work-section .work7::before{background:linear-gradient( rgba(0, 0, 0, 0.258)),url("../pictures/About2.webp") center/cover no-repeat;}
