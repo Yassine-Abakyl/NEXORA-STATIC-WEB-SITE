@@ -291,8 +291,8 @@ nav .burger-btn .close {
     margin: 0.8em 0.4em;
     width: fit-content;
     cursor: default;
-    animation: popup 2.3s ease;
-    animation-delay: 1.5s;
+    animation: popup 2.6s ease;
+    animation-delay: 1s;
 }
 
 .online p {
@@ -327,8 +327,8 @@ nav .burger-btn .close {
     word-spacing: 5px;
     letter-spacing: 2px;
     text-align: center;
-    animation: popup 2.6s ease;
-    animation-delay: 1.5s;
+    animation: popup 2.9s ease;
+    animation-delay: 1s;
 }
 
 .effective {
@@ -341,8 +341,8 @@ nav .burger-btn .close {
     text-align: center;
     line-height: 1.6em;
     padding: 1rem 0;
-    animation: popup 2.9s ease;
-    animation-delay: 1.5s;
+    animation: popup 3.2s ease;
+    animation-delay: 1s;
 
 }
 
@@ -355,7 +355,7 @@ nav .burger-btn .close {
 }
 
 .hero-buttons a {
-    animation: popup 3.2s ease;
+    animation: popup 3.5s ease;
     animation-delay: 1.5s;
 }
 
@@ -417,7 +417,7 @@ nav>a {
     margin-top:2rem;
     position: relative;
     padding: 1.5rem;
-    animation: open 2s ease-in-out forwards;
+    animation: open 2.8s ease-in-out forwards;
     animation-delay: 0.5s;
     box-shadow:0 100vw 15px rgba(243, 202, 90, 0.381) inset ;
     background: url("../pictures/heroNexora.jpg") no-repeat center / cover;
