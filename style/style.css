@@ -984,7 +984,7 @@ p[class*=p-service-card] {
     flex-direction: column;
     position: sticky;
     gap: 1rem;
-    max-height: 100vh;
+    min-height: 90vh;
     flex: 1 1 30vw;
     top: 130px;
 }
@@ -997,13 +997,13 @@ p[class*=p-service-card] {
 
 .work-section .work1 {
     top: 0px;
-    height: 100vh;
+    min-height: 100vh;
     flex: 1 1 100vw;
 }
 
 .work-section .work2,
 .work-section .work7 {
-    max-height: 100vh;
+    min-height:90vh;
     flex: 1 1 40vw;
     top: 20px;
 
@@ -1026,7 +1026,7 @@ p[class*=p-service-card] {
 }
 
 .work-section .work2::before {
-    background: linear-gradient(rgba(0, 0, 0, 0.258)), url("../pictures/About2.webp") center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.258)), url("../pictures/playstation1.png") bottom/cover no-repeat;
 }
 
 .work-section .work3::before {
@@ -1038,11 +1038,11 @@ p[class*=p-service-card] {
 }
 
 .work-section .work5::before {
-    background: linear-gradient(rgba(0, 0, 0, 0.258)), url("../pictures/About2.webp") center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.258)), url("../pictures/store_gaming.png") center/cover no-repeat;
 }
 
 .work-section .work6::before {
-    background: linear-gradient(rgba(0, 0, 0, 0.258)), url("../pictures/About2.webp") center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.258)), url("../pictures/sea_nova.png") center/cover no-repeat;
 }
 
 .work-section .work7::before {
@@ -1857,6 +1857,7 @@ footer .links a:hover {
     .collaps {
         position: relative;
         top: 0;
+        max-height:100vh;
     }
 
     .work-section .work1::before {
