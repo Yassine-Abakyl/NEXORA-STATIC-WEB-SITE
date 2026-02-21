@@ -1026,7 +1026,7 @@ p[class*=p-service-card] {
 }
 
 .work-section .work2::before {
-    background: linear-gradient(rgba(0, 0, 0, 0.258)), url("../pictures/playstation1.png") bottom/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.258)), url("../pictures/playstation.png") bottom/cover no-repeat;
 }
 
 .work-section .work3::before {
@@ -1038,11 +1038,11 @@ p[class*=p-service-card] {
 }
 
 .work-section .work5::before {
-    background: linear-gradient(rgba(0, 0, 0, 0.258)), url("../pictures/store_gaming.png") center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.258)), url("../pictures/storegaming.png") center/cover no-repeat;
 }
 
 .work-section .work6::before {
-    background: linear-gradient(rgba(0, 0, 0, 0.258)), url("../pictures/sea_nova.png") center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.258)), url("../pictures/seanova.png") center/cover no-repeat;
 }
 
 .work-section .work7::before {
