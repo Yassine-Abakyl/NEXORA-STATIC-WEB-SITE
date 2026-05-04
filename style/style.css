@@ -1042,7 +1042,7 @@ p[class*=p-service-card] {
 }
 
 .work-section .work6::before {
-    background: linear-gradient(rgba(0, 0, 0, 0.258)), url("../pictures/seanova.png") center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.258)), url("../pictures/bookWorld.png") center/cover no-repeat;
 }
 
 .work-section .work7::before {
